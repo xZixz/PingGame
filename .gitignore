@@ -22,6 +22,10 @@ proj.android/.pydevproject
 
 proj.android/.externalToolBuilders
 
+proj.android/local.properties
+
+proj.android/lint.xml
+
 *~
 
 lib.android/facebook/bin/
