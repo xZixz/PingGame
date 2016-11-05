@@ -20,6 +20,8 @@ proj.android/.project
 
 proj.android/.pydevproject
 
+proj.android/.externalToolBuilders
+
 *~
 
 lib.android/facebook/bin/
