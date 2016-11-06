@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "scene/GameScene.h"
+#include "Config.h"
 
 USING_NS_CC;
 
@@ -53,26 +54,26 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
 
-    Size res = mediumResolutionSize;
+    Size res = Size(WIDTH_RES, HEIGHT_RES);
 
     // Set the design resolution
     glview->setDesignResolutionSize(res.width, res.height, ResolutionPolicy::FIXED_WIDTH);
     Size frameSize = glview->getFrameSize();
     // if the frame's height is larger than the height of medium size.
-    if (frameSize.height > mediumResolutionSize.height)
-    {
-        director->setContentScaleFactor(MIN(largeResolutionSize.height/designResolutionSize.height, largeResolutionSize.width/designResolutionSize.width));
-    }
-    // if the frame's height is larger than the height of small size.
-    else if (frameSize.height > smallResolutionSize.height)
-    {
-        director->setContentScaleFactor(MIN(mediumResolutionSize.height/designResolutionSize.height, mediumResolutionSize.width/designResolutionSize.width));
-    }
-    // if the frame's height is smaller than the height of medium size.
-    else
-    {
-        director->setContentScaleFactor(MIN(smallResolutionSize.height/designResolutionSize.height, smallResolutionSize.width/designResolutionSize.width));
-    }
+//    if (frameSize.height > mediumResolutionSize.height)
+//    {
+//        director->setContentScaleFactor(MIN(largeResolutionSize.height/designResolutionSize.height, largeResolutionSize.width/designResolutionSize.width));
+//    }
+//    // if the frame's height is larger than the height of small size.
+//    else if (frameSize.height > smallResolutionSize.height)
+//    {
+//        director->setContentScaleFactor(MIN(mediumResolutionSize.height/designResolutionSize.height, mediumResolutionSize.width/designResolutionSize.width));
+//    }
+//    // if the frame's height is smaller than the height of medium size.
+//    else
+//    {
+//        director->setContentScaleFactor(MIN(smallResolutionSize.height/designResolutionSize.height, smallResolutionSize.width/designResolutionSize.width));
+//    }
 
     register_all_packages();
 

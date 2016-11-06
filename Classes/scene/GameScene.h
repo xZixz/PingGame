@@ -1,17 +1,22 @@
 #include "cocos2d.h"
 #include "../model/PTile.h"
 
+class SceneDelegate;
+
 USING_NS_CC;
 
-class GameScene : public Layer {
+class GameScene : public LayerColor, public SceneDelegate {
 public:
   static Scene* createScene();
   virtual bool init();
 
   // handle touches
   void enableTouches();
-  virtual void onTouchesBegan(const std::vector<Touch*> touches, Event* event);
-  virtual void onTouchesEnded(const std::vector<Touch*> touches, Event* event);
+  virtual bool onTouchBegan(const Touch* touch, Event* event);
+  virtual void onTouchEnded(const Touch* touch, Event* event);
+
+  void addScore(int scores);
+  virtual void tileEndAct();
 
   CREATE_FUNC(GameScene);
   GameScene();
@@ -19,5 +24,8 @@ public:
 
 private:
   Node* _baseNode;
-  std::vector<PTile> _currentTiles;
+  std::vector<PTile*> _currentTiles;
+  Label* _scoreLabel;
+  Size _screenSize;
+  int _score;
 };

@@ -91,3 +91,8 @@ proj.wp8-xaml/AppComponent/Debug
 proj.wp8-xaml/AppComponent/Release
 
 proj.win8.1-universal
+
+# Win32 Files #
+
+proj.win32/Debug.win32
+proj.win10

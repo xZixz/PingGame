@@ -22,6 +22,23 @@ bool PTile::init(std::string themeName) {
   return false;
 }
 
+void PTile::onClick() {
+  act();
+}
+
+void PTile::act() {
+  setVisible(false);
+  endAct();
+}
+
+void PTile::endAct() {
+  _sceneDelegate->tileEndAct();
+}
+
+void PTile::setSceneDelegate(SceneDelegate* sceneDelegate) {
+  _sceneDelegate = sceneDelegate;
+}
+
 PTile::PTile(){
 
 }
